@@ -152,8 +152,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
 1. <a name="whitespace">Whitespace</a>
   - Never mix spaces and tabs.
-  - When beginning a project, before you write any code, choose between soft indents (spaces) or real tabs, consider this **law**.
-      - For readability, I always recommend setting your editor's indent size to two characters &mdash; this means two spaces or two spaces representing a real tab.
+  - When beginning a project, before you write any code, choose between soft indents (spaces) or real tabs *(Preference: spaces)*
+      - If using spaces, choose the number of characters used per indentation level. *(Preference: 4 spaces)*
+      - Consider this **law**
   - If your editor supports it, always work with the "show invisibles" setting turned on. The benefits of this practice are:
       - Enforced consistency
       - Eliminating end of line whitespace
@@ -185,46 +186,46 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Use whitespace to promote readability
 
     if ( condition ) {
-      // statements
+        // statements
     }
 
     while ( condition ) {
-      // statements
+        // statements
     }
 
     for ( var i = 0; i < 100; i++ ) {
-      // statements
+        // statements
     }
 
     // Even better:
 
     var i,
-      length = 100;
+        length = 100;
 
     for ( i = 0; i < length; i++ ) {
-      // statements
+        // statements
     }
 
     // Or...
 
     var i = 0,
-      length = 100;
+        length = 100;
 
     for ( ; i < length; i++ ) {
-      // statements
+        // statements
     }
 
     var prop;
 
     for ( prop in object ) {
-      // statements
+        // statements
     }
 
 
     if ( true ) {
-      // statements
+        // statements
     } else {
-      // statements
+        // statements
     }
     ```
 
@@ -236,12 +237,12 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 2.B.1.1
     // Variables
     var foo = "bar",
-      num = 1,
-      undef;
+        num = 1,
+        undef;
 
     // Literal notations:
     var array = [],
-      object = {};
+        object = {};
 
 
     // 2.B.1.2
@@ -255,8 +256,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Good
     var foo = "",
-      bar = "",
-      qux;
+        bar = "",
+        qux;
 
     // or..
     var // Comment on these
@@ -271,18 +272,18 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Bad
     function foo() {
 
-      // some statements here
+        // some statements here
 
-      var bar = "",
-        qux;
+        var bar = "",
+            qux;
     }
 
     // Good
     function foo() {
-      var bar = "",
-        qux;
+        var bar = "",
+            qux;
 
-      // all statements after the variables declarations.
+        // all statements after the variables declarations.
     }
 
     // 2.B.1.4
@@ -290,20 +291,20 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Bad
     function foo() {
-      let foo,
-        bar;
-      if (condition) {
-        bar = "";
-        // statements
-      }
+        let foo,
+            bar;
+        if (condition) {
+            bar = "";
+            // statements
+        }
     }
     // Good
     function foo() {
-      let foo;
-      if (condition) {
-        let bar = "";
-        // statements
-      }
+        let foo;
+        if (condition) {
+            let bar = "";
+            // statements
+        }
     }
     ```
 
@@ -322,7 +323,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 2.B.2.2
     // Named Function Declaration
     function square( number ) {
-      return number * number;
+        return number * number;
     }
 
     // Usage
@@ -330,30 +331,30 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Really contrived continuation passing style
     function square( number, callback ) {
-      callback( number * number );
+        callback( number * number );
     }
 
     square( 10, function( square ) {
-      // callback statements
+        // callback statements
     });
 
 
     // 2.B.2.3
     // Function Expression
     var square = function( number ) {
-      // Return something valuable and relevant
-      return number * number;
+        // Return something valuable and relevant
+        return number * number;
     };
 
     // Function Expression with Identifier
     // This preferred form has the added value of being
     // able to call itself and have an identity in stack traces:
     var factorial = function factorial( number ) {
-      if ( number < 2 ) {
-        return 1;
-      }
+        if ( number < 2 ) {
+            return 1;
+        }
 
-      return number * factorial( number - 1 );
+        return number * factorial( number - 1 );
     };
 
 
@@ -361,7 +362,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Constructor Declaration
     function FooBar( options ) {
 
-      this.options = options;
+        this.options = options;
     }
 
     // Usage
@@ -380,8 +381,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 2.C.1.1
     // Functions with callbacks
     foo(function() {
-      // Note there is no extra space between the first paren
-      // of the executing function call and the word "function"
+        // Note there is no extra space between the first paren
+        // of the executing function call and the word "function"
     });
 
     // Function accepting an array, no space
@@ -390,8 +391,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 2.C.1.2
     // Function accepting an object, no space
     foo({
-      a: "alpha",
-      b: "beta"
+        a: "alpha",
+        b: "beta"
     });
 
     // Single argument string literal, no space
@@ -414,28 +415,28 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 2.D.1.1
 
     if (condition) {
-      // statements
+        // statements
     }
 
     while (condition) {
-      // statements
+        // statements
     }
 
     for (var i = 0; i < 100; i++) {
-      // statements
+        // statements
     }
 
     if (true) {
-      // statements
+        // statements
     } else {
-      // statements
+        // statements
     }
 
     ```
 
     E. Quotes
 
-    Whether you prefer single or double shouldn't matter, there is no difference in how JavaScript parses them. What **ABSOLUTELY MUST** be enforced is consistency. **Never mix quotes in the same project. Pick one style and stick with it.**
+    Whether you prefer single or double shouldn't matter, there is no difference in how JavaScript parses them. What **ABSOLUTELY MUST** be enforced is consistency. **Never mix quotes in the same project. Pick one style and stick with it.** *(Default: double quotes)*
 
     F. End of Lines and Empty Lines
 
@@ -528,7 +529,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     if ( foo === 1 ) {
 
-      importantTask();
+        importantTask();
 
     }
 
@@ -547,7 +548,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     if ( foo === 1 ) {
 
-      importantTask();
+        importantTask();
 
     }
 
@@ -562,8 +563,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 3.B.2.1
 
     var number = 1,
-      string = "1",
-      bool = false;
+        string = "1",
+        bool = false;
 
     number;
     // 1
@@ -598,8 +599,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 3.B.2.2
 
     var number = 1,
-      string = "1",
-      bool = true;
+        string = "1",
+        bool = true;
 
     string === number;
     // false
@@ -645,7 +646,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // indexOf, like:
 
     if ( array.indexOf( "a" ) >= 0 ) {
-      // ...
+        // ...
     }
     ```
 
@@ -814,29 +815,29 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     (function( global ) {
       var Module = (function() {
 
-        var data = "secret";
+          var data = "secret";
 
-        return {
-          // This is some boolean property
-          bool: true,
-          // Some string value
-          string: "a string",
-          // An array property
-          array: [ 1, 2, 3, 4 ],
-          // An object property
-          object: {
-            lang: "en-Us"
-          },
-          getData: function() {
-            // get the current value of `data`
-            return data;
-          },
-          setData: function( value ) {
-            // set the value of `data` and return it
-            return ( data = value );
-          }
-        };
-      })();
+          return {
+              // This is some boolean property
+              bool: true,
+              // Some string value
+              string: "a string",
+              // An array property
+              array: [ 1, 2, 3, 4 ],
+              // An object property
+              object: {
+                  lang: "en-Us"
+              },
+              getData: function() {
+                  // get the current value of `data`
+                  return data;
+              },
+              setData: function( value ) {
+                  // set the value of `data` and return it
+                  return ( data = value );
+              }
+          };
+      }());
 
       // Other things might happen here
 
@@ -856,30 +857,30 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
       function Ctor( foo ) {
 
-        this.foo = foo;
+          this.foo = foo;
 
-        return this;
+          return this;
       }
 
       Ctor.prototype.getFoo = function() {
-        return this.foo;
+          return this.foo;
       };
 
       Ctor.prototype.setFoo = function( val ) {
-        return ( this.foo = val );
+          return ( this.foo = val );
       };
 
 
       // To call constructor's without `new`, you might do this:
       var ctor = function( foo ) {
-        return new Ctor( foo );
+          return new Ctor( foo );
       };
 
 
       // expose our constructor to the global object
       global.ctor = ctor;
 
-    })( this );
+    }( this ));
 
     ```
 
@@ -899,7 +900,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Example of code with poor names
 
     function q(s) {
-      return document.querySelectorAll(s);
+        return document.querySelectorAll(s);
     }
     var i,a=[],els=q("#foo");
     for(i=0;i<els.length;i++){a.push(els[i]);}
@@ -915,16 +916,16 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Example of code with improved names
 
     function query( selector ) {
-      return document.querySelectorAll( selector );
+        return document.querySelectorAll( selector );
     }
 
     var idx = 0,
-      elements = [],
-      matches = query("#foo"),
-      length = matches.length;
+        elements = [],
+        matches = query("#foo"),
+        length = matches.length;
 
     for ( ; idx < length; idx++ ) {
-      elements.push( matches[ idx ] );
+        elements.push( matches[ idx ] );
     }
 
     ```
@@ -984,27 +985,27 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 6.B.1
     function Device( opts ) {
 
-      this.value = null;
+        this.value = null;
 
-      // open an async stream,
-      // this will be called continuously
-      stream.read( opts.path, function( data ) {
+        // open an async stream,
+        // this will be called continuously
+        stream.read( opts.path, function( data ) {
 
-        // Update this instance's current value
-        // with the most recent value from the
-        // data stream
-        this.value = data;
+            // Update this instance's current value
+            // with the most recent value from the
+            // data stream
+            this.value = data;
 
-      }.bind(this) );
+        }.bind(this) );
 
-      // Throttle the frequency of events emitted from
-      // this Device instance
-      setInterval(function() {
+        // Throttle the frequency of events emitted from
+        // this Device instance
+        setInterval(function() {
 
-        // Emit a throttled event
-        this.emit("event");
+            // Emit a throttled event
+            this.emit("event");
 
-      }.bind(this), opts.freq || 100 );
+        }.bind(this), opts.freq || 100 );
     }
 
     // Just pretend we've inherited EventEmitter ;)
@@ -1020,55 +1021,55 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // eg. lodash/underscore, _.bind()
     function Device( opts ) {
 
-      this.value = null;
+        this.value = null;
 
-      stream.read( opts.path, _.bind(function( data ) {
+        stream.read( opts.path, _.bind(function( data ) {
 
-        this.value = data;
+            this.value = data;
 
-      }, this) );
+        }, this) );
 
-      setInterval(_.bind(function() {
+        setInterval(_.bind(function() {
 
-        this.emit("event");
+            this.emit("event");
 
-      }, this), opts.freq || 100 );
+        }, this), opts.freq || 100 );
     }
 
     // eg. jQuery.proxy
     function Device( opts ) {
 
-      this.value = null;
+        this.value = null;
 
-      stream.read( opts.path, jQuery.proxy(function( data ) {
+        stream.read( opts.path, jQuery.proxy(function( data ) {
 
-        this.value = data;
+            this.value = data;
 
-      }, this) );
+        }, this) );
 
-      setInterval( jQuery.proxy(function() {
+        setInterval( jQuery.proxy(function() {
 
-        this.emit("event");
+            this.emit("event");
 
-      }, this), opts.freq || 100 );
+        }, this), opts.freq || 100 );
     }
 
     // eg. dojo.hitch
     function Device( opts ) {
 
-      this.value = null;
+        this.value = null;
 
-      stream.read( opts.path, dojo.hitch( this, function( data ) {
+        stream.read( opts.path, dojo.hitch( this, function( data ) {
 
-        this.value = data;
+            this.value = data;
 
-      }) );
+        }) );
 
-      setInterval( dojo.hitch( this, function() {
+        setInterval( dojo.hitch( this, function() {
 
-        this.emit("event");
+            this.emit("event");
 
-      }), opts.freq || 100 );
+        }), opts.freq || 100 );
     }
 
     ```
@@ -1080,21 +1081,21 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 6.B.3
 
     function Device( opts ) {
-      var self = this;
+        var self = this;
 
-      this.value = null;
+        this.value = null;
 
-      stream.read( opts.path, function( data ) {
+        stream.read( opts.path, function( data ) {
 
-        self.value = data;
+            self.value = data;
 
-      });
+        });
 
-      setInterval(function() {
+        setInterval(function() {
 
-        self.emit("event");
+            self.emit("event");
 
-      }, opts.freq || 100 );
+        }, opts.freq || 100 );
     }
 
     ```
@@ -1114,9 +1115,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     Object.keys( obj ).forEach(function( key ) {
 
-      // |this| now refers to `obj`
+        // |this| now refers to `obj`
 
-      console.log( this[ key ] );
+        console.log( this[ key ] );
 
     }, obj ); // <-- the last arg is `thisArg`
 
@@ -1148,15 +1149,15 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // An example switch statement
 
     switch( foo ) {
-      case "alpha":
-        alpha();
-        break;
-      case "beta":
-        beta();
-        break;
-      default:
-        // something to default to
-        break;
+        case "alpha":
+            alpha();
+            break;
+        case "beta":
+            beta();
+            break;
+        default:
+            // something to default to
+            break;
     }
 
     // 7.A.1.2
@@ -1167,21 +1168,21 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Example returns for illustration only.
     cases = {
-      alpha: function() {
-        // statements
-        // a return
-        return [ "Alpha", arguments.length ];
-      },
-      beta: function() {
-        // statements
-        // a return
-        return [ "Beta", arguments.length ];
-      },
-      _default: function() {
-        // statements
-        // a return
-        return [ "Default", arguments.length ];
-      }
+        alpha: function() {
+            // statements
+            // a return
+            return [ "Alpha", arguments.length ];
+        },
+        beta: function() {
+            // statements
+            // a return
+            return [ "Beta", arguments.length ];
+        },
+        _default: function() {
+            // statements
+            // a return
+            return [ "Default", arguments.length ];
+        }
     };
 
     delegator = function() {
@@ -1198,7 +1199,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
       // Derive the method to delegate operation to
       if ( cases.hasOwnProperty( key ) ) {
-        delegate = cases[ key ];
+          delegate = cases[ key ];
       }
 
       // The scope arg could be set to something specific,
@@ -1221,9 +1222,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     someUserInput = 9;
 
     if ( someUserInput > 10 ) {
-      caseKey = "alpha";
+        caseKey = "alpha";
     } else {
-      caseKey = "beta";
+        caseKey = "beta";
     }
 
     // or...
@@ -1250,14 +1251,14 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // 7.B.1.1
     // Bad:
     function returnLate( foo ) {
-      var ret;
+        var ret;
 
-      if ( foo ) {
-        ret = "foo";
-      } else {
-        ret = "quux";
-      }
-      return ret;
+        if ( foo ) {
+            ret = "foo";
+        } else {
+            ret = "quux";
+        }
+        return ret;
     }
 
     // Good:
@@ -1265,7 +1266,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     function returnEarly( foo ) {
 
       if ( foo ) {
-        return "foo";
+          return "foo";
       }
       return "quux";
     }
